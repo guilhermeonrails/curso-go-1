@@ -5,9 +5,9 @@ import (
 )
 
 type Pizza struct {
-	ID    int
-	nome  string
-	preco float64
+	ID    int     `json:"id"`
+	Nome  string  `json:"nome"`
+	Preco float64 `json:"preco"`
 }
 
 func main() {
@@ -18,9 +18,9 @@ func main() {
 
 func getPizzas(c *gin.Context) {
 	var pizzas = []Pizza{
-		{ID: 1, nome: "Toscana", preco: 49.5},
-		{ID: 2, nome: "Marguerita", preco: 79.5},
-		{ID: 3, nome: "Atum com queijo", preco: 69.5},
+		{ID: 1, Nome: "Toscana", Preco: 49.5},
+		{ID: 2, Nome: "Marguerita", Preco: 79.5},
+		{ID: 3, Nome: "Atum com queijo", Preco: 69.5},
 	}
 	c.JSON(200, gin.H{
 		"pizzas": pizzas,
