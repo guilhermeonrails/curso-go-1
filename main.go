@@ -77,7 +77,6 @@ func savePizza() {
 		return
 	}
 	defer file.Close()
-
 	encoder := json.NewEncoder(file)
 	if err := encoder.Encode(pizzas); err != nil {
 		fmt.Println("Error encoding JSON:", err)
